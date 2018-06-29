@@ -1,11 +1,8 @@
-#FROM microsoft/aspnetcore-build AS build-env
 FROM microsoft/dotnet:2.1.300-sdk  AS build-env
 
 WORKDIR /TechTalksAPI
 
-COPY TechTalksAPI /TechTalksAPI/
-
-COPY NuGet.config ./
+COPY TechTalksAPI.csproj /TechTalksAPI/
 
 COPY . ./
 
