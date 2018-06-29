@@ -27,7 +27,7 @@ spec:
         - name: ACCEPT_EULA
           value: "Y"
         - name: SA_PASSWORD
-          value: January2018
+          value: June2018
           # valueFrom:
           #   secretKeyRef:
           #     name: mssql
