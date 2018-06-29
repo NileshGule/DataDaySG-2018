@@ -42,15 +42,33 @@ namespace TechTalksAPI.Controllers
 
         // POST api/TechTalks
         [HttpPost]
-        public IActionResult Create([FromBody]TechTalk item)
+        public IActionResult Create([FromBody]TechTalk techTalk)
         {
-            if (item == null)
+            if (techTalk == null)
             {
                 return BadRequest();
             }
 
             Console.WriteLine("Saving Tech talk to database.");
 
+            Console.WriteLine($"Tech Talk Id : {techTalk.Id}");
+            Console.WriteLine($"Tech Talk Name : {techTalk.TechTalkName}");
+            Console.WriteLine($"Category : {techTalk.CategoryId}");
+            Console.WriteLine($"Level : {techTalk.LevelId}");
+
+            try
+            {
+                _context.TechTalk.Add(techTalk);
+                _context.Entry(techTalk.Category).State = EntityState.Unchanged;
+                _context.Entry(techTalk.Level).State = EntityState.Unchanged;
+                _context.SaveChanges();  
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Inside exception block");
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.InnerException);
+            }
     
             
             return Ok();
