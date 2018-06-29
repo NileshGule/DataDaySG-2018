@@ -6,16 +6,6 @@ services:
     build:
       context: ../src/TechTalksDB
       dockerfile: Dockerfile
-  
-  # sql.data:
-  #   image: microsoft/mssql-server-linux:2017-latest
-  #   container_name: sql2017
-  #   ports:
-  #     - "1443:1443"
-  #   environment:
-  #     - ACCEPT_EULA=Y
-  #     - SA_PASSWORD=June2018
-    
       
   techtalks.api:
     image: nileshgule/techtalksapi-datadaysg
