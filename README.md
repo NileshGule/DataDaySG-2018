@@ -4,9 +4,9 @@ Code for [Singapore Data Day 2018 30 June 2018](https://www.meetup.com/mssgug/ev
 
 ## Code organization
 
-- src
+- `src`
 Contains the source code.
     
-    - TechTalksAPI contains code for Web API project
+    - `TechTalksAPI` contains code for Web API project
 
-    - TchTalksDB contains database initialization script
+    - `TechTalksDB` contains database initialization script
